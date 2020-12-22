@@ -1,0 +1,11 @@
+UP = 1
+LEFT = 2
+RIGHT = 3
+DOWN = 4
+SPRINT = 5
+v0_min = 1
+v0_max = 3
+time_to_reach_max_speed = 0.2
+G = 10
+hor_speed = 0.1
+hor_speed_sprint = 0.2
