@@ -3,36 +3,35 @@ from pygame import locals as const
 from character import *
 from constantes import *
 from Plateforme import *
+from arrival import *
+
 
 class Game:
-    def __init__(self, screen: pygame.Surface):
+    def __init__(self, screen, walls, arrival_location):
         self.screen = screen
         self.continuer = True
         self.controles = {
-            UP: const.K_UP,
+            UP: const.K_SPACE,
             DOWN: const.K_DOWN,
             RIGHT : const.K_RIGHT,
             LEFT : const.K_LEFT,
             SPRINT:const.K_s
         }
-        platform = Platform(screen, (300, 300), 200, 10)
-        platform2 = Platform(screen, (400, 200), 200, 10)
-        platform3 = Platform(screen, (200, 400), 200, 10)
-        platform1 = Platform(screen, (0, screen.get_height()-1), screen.get_width(), 10)
-        self.platforms = [platform, platform2, platform3]
-        self.character = Character(self.screen, self.platforms)
+        self.character = Character(self.screen)
+        self.walls = walls
+        self.arrival = Arrival(arrival_location, screen)
+        self.object_to_display = [*self.walls,  self.arrival]
 
     def prepare(self):
         pygame.key.set_repeat(200, 50)
         self.continuer = True
-        self.character = Character(self.screen, self.platforms)
+        self.character = Character(self.screen)
 
     def update_screen(self):
         pygame.draw.rect(self.screen, (255, 255, 255), (0, 0) + self.screen.get_size())  # on dessine le fond
         self.character.render()
-        for i in range(len(self.platforms)):
-            self.platforms[i].render()
-
+        for o in self.object_to_display:
+            o.render()
 
 
     def process_event(self, event: pygame.event):
@@ -59,9 +58,26 @@ class Game:
         if event.type == const.QUIT:
             self.continuer = False
 
+    def test_outside_screen(self):
+        return self.character.pos[0] < -self.character.width or self.character.pos[0] > self.screen.get_width() \
+               or self.character.pos[1] < -self.character.height or self.character.pos[1] > self.screen.get_height()
+
+    def test_game_over(self):
+        for w in self.walls:
+            if w.collide_with_me(self.character):
+                self.continuer = False
+                return messages[0]
+        if self.test_outside_screen():
+            self.continuer = False
+            return messages[1]
+        if self.arrival.test_end_game(self.character):
+            self.continuer = False
+            return messages[2]
+        return ''
+
     def start(self):
         self.prepare()
-
+        message = ''
         while self.continuer:
             for event in pygame.event.get():
                 self.process_event(event)
@@ -69,3 +85,5 @@ class Game:
             self.character.move()
             self.update_screen()
             pygame.display.flip()
+            message = self.test_game_over()
+        return message
