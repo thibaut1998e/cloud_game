@@ -1,0 +1,115 @@
+LevelDesigner
+height	500
+width	1000
+
+Character
+initial_pos	[443.0, 232.0]
+height	40.0
+width	40.0
+speed	0.1
+speed_sprint	0.2
+
+Arrival
+initial_pos	[922.0, 42.0]
+height	40.0
+width	40.0
+
+Wall
+initial_pos	[852.0, 304.0]
+height	195.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	60.0
+
+Wall
+initial_pos	[858.0, 3.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	-60.0
+
+Wall
+initial_pos	[654.0, 300.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	40.0
+
+Wall
+initial_pos	[654.0, 2.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	-45.0
+
+Wall
+initial_pos	[543.0, 285.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	300.0
+
+Wall
+initial_pos	[543.0, 285.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	300.0
+
+Wall
+initial_pos	[543.0, 285.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	300.0
+
+Wall
+initial_pos	[543.0, 285.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	300.0
+
+Wall
+initial_pos	[543.0, 285.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	300.0
+
+Wall
+initial_pos	[902.0, 144.0]
+height	10.0
+width	415.0
+period_X	2.0
+period_Y	2.0
+ampli_X	70.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[542, 18]
+height	200
+width	10
+period_X	2
+period_Y	2
+ampli_X	0
+ampli_Y	-300
+
