@@ -6,6 +6,7 @@ import pygame as pg
 from utils import *
 from game import *
 from constantes import *
+from Coin import *
 import pickle
 
 
@@ -15,7 +16,8 @@ class LevelDesigner(Game):
         self.controles = {VER_WALL: const.K_w,
                           HOR_WALL:const.K_x,
                           DELETE:const.K_d,
-                          ADD_BUTTON_WALL:const.K_b}
+                          ADD_BUTTON_WALL:const.K_b,
+                          COIN:const.K_c}
 
     def process_event(self, event):
         super(LevelDesigner, self).process_event(event)
@@ -29,6 +31,9 @@ class LevelDesigner(Game):
             if event.key == self.controles[HOR_WALL]:
                 new_wall = Wall(self, [self.width // 2, self.height // 2], 10, 200)
                 self.add_object(new_wall)
+            if event.key == self.controles[COIN]:
+                new_coin = Coin(self, [self.width//2, self.height//2])
+                self.add_object(new_coin)
 
     def save(self, save_location):
         f = open(save_location, 'w')
@@ -51,12 +56,11 @@ def write_object_in_file(o, f):
     print('', file=f)
 
 
-
-
 dict_class_name = {'Character':Character,
                    'Wall':Wall,
                    'Arrival':Arrival,
-                   'LevelDesigner': LevelDesigner}
+                   'LevelDesigner': LevelDesigner,
+                   'Coin':Coin}
 
 
 if __name__ == '__main__':

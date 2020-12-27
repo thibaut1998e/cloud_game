@@ -2,8 +2,8 @@ from game_object import *
 
 
 class Monster(Game_object):
-    def __init__(self, game, pos=(0,0), height=40, width=40, im_path=None):
-        super().__init__(game, pos, height, width, im_path)
+    def __init__(self, game, pos=(0,0), height=40, width=40, im_path=None, transparent_color=black):
+        super().__init__(game, pos, height, width, im_path, transparent_color)
 
     def collide_with_me(self, character):
         """return true iff characcter colide with the wall self"""

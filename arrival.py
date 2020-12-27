@@ -11,7 +11,7 @@ class Arrival(Game_object):
 
     def test_end_game(self, character):
         x_center, y_center = character.get_center()
-        return self.point_inside_limits((x_center, y_center))
+        return self.point_inside_limits((x_center, y_center)) and self.game.all_coins_caught()
 
     def interact(self):
         if self.test_end_game(self.game.get_character()):

@@ -4,6 +4,7 @@ from character import *
 from constantes import *
 from wall import *
 from arrival import *
+from Coin import *
 
 
 
@@ -77,6 +78,19 @@ class Game:
             o.process_event(event)
         if event.type == const.QUIT:
             self.continuer = False
+
+    def get_coins(self):
+        coins = []
+        for o in self.objects:
+            if isinstance(o, Coin):
+                coins.append(o)
+        return coins
+
+    def all_coins_caught(self):
+        for c in self.get_coins():
+            if not c.caught:
+                return False
+        return True
 
     def start(self):
         message = ''
