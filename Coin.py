@@ -10,7 +10,7 @@ class Coin(Game_object):
     def display(self, color=black):
         if not self.caught:
             super(Coin, self).display()
-    
+
     def interact(self):
         x_center, y_center = self.game.get_character().get_center()
         if self.point_inside_limits([x_center, y_center]):
@@ -18,4 +18,6 @@ class Coin(Game_object):
         return ''
     
     def reset(self):
+        super(Coin, self).reset()
         self.caught = False
+

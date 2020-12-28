@@ -3,12 +3,9 @@ LEFT = 2
 RIGHT = 3
 DOWN = 4
 SPRINT = 5
-
-HOR_WALL = 6
-VER_WALL = 7
 DELETE = 8
 ADD_BUTTON_WALL = 9
-COIN = 10
+
 
 v0_min = 0.3
 v0_max = 0.6
@@ -17,11 +14,13 @@ G = 1
 hor_speed = 0.1
 hor_speed_sprint = 0.2
 
-messages = ['you collided with a wall : GAME OVER', 'you went outside the screen : GAME OVER', 'Congratulation you won']
+messages = ['you collided with a wall or a monster : GAME OVER', 'you went outside the screen : GAME OVER',
+            'Congratulation you won']
 
 path_character_image = 'images/nuage.png'
 path_arrival_image = 'images/arrival.PNG'
 coin_image = 'images/coin.png'
+monster_image = 'images/diable.png'
 default_backgroud_image = 'images/cloud_background.png'
 
 green = (0, 255, 0)

@@ -1,0 +1,24 @@
+Playing mode instruction :
+- move right and left with the arrows 
+- jump with space (the longer you press the key, the higher you jump)
+- sprint with S
+
+Edition Mode Instruction : 
+1) add an object :
+- W key : add vertical wall
+- X key : add horizontal wall
+- M add a monster 
+- C add a coin 
+2) move an object : maintain left click and move the mouse
+3) select an object : right click on it
+deselect : right click on a selected object
+4) possible actions on selected objects :
+- up arrow --> raises height
+- down arrow --> reduces height
+- left arrow --> reduces width
+- right arrow --> raises width
+- D key --> supress the object
+- B key -- > buttons with values appears, they can represents the period and amplitude of moving wall for example or the speed
+of the character. You can adjust their values. To change the value of one button , first select it then uses '+' or '-' on your
+keyboard. When you have finished adjusting the values in your preferences, press B again. The values are saved at this moment.
+5) You can also move the character with the same command as the playing mode

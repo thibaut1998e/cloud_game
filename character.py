@@ -5,10 +5,10 @@ from game_object import *
 from pygame import locals as const
 import copy as cp
 import pygame as pg
+from Button import *
 
 
 t0_jump = 0
-
 
 
 class Character(Game_object):
@@ -17,17 +17,16 @@ class Character(Game_object):
         if pos is None:
             pos = [0, 2 * height]
         super().__init__(game, pos, height, width, im_path)
-        #self.initial_pos = [pos[0], pos[1]]
         self.move_right = False
         self.move_left = False
         self.sprint = False
-        self.jump_button = False #True iff jump bitton is currently pressed
+        self.jump_button = False # True iff jump bitton is currently pressed
         self.v0 = 0
-        #self.start = False
         self.speed = speed
         self.speed_sprint = speed_sprint
         self.controles = {
-            UP: const.K_SPACE,
+            UP:const.K_SPACE,
+            #UP: const.K_UP,
             DOWN: const.K_DOWN,
             RIGHT: const.K_RIGHT,
             LEFT: const.K_LEFT,
@@ -37,12 +36,10 @@ class Character(Game_object):
 
     def reset(self):
         super(Character, self).reset()
-        #self.start = False
         self.jump_button = False
         self.sprint = False
         self.move_left = False
         self.move_right = False
-
 
     def attributes_to_save(self):
         att_to_save = super(Character, self).attributes_to_save()
@@ -114,12 +111,19 @@ class Character(Game_object):
             return messages[1]
         return ''
 
-    """
-    def process_event_edition_mode(self, event):
-        if event.type == pg.MOUSEBUTTONUP and self.selected:
-            self.initial_pos = [event.pos[0], event.pos[1]]
-        super(Character, self).process_event_edition_mode(event)
-    """
+    def create_buttons(self):
+        pos1 = [self.pos[0] + self.width + 10, self.pos[1] + self.height//2]
+        pos2 = [self.pos[0]+self.width//2, self.pos[1]+self.height+10]
+        b1 = Button(self.game, pos1, 0, 0,
+                    'speed : ', self.speed, value_min=0.05, value_max=0.2, step=0.01)
+        b2 = Button(self.game, pos2, 0, 0,
+                    'speed sprint: ', self.speed_sprint, value_min=0.1, value_max=0.5, step=0.01)
+        return [b1, b2]
+
+    def save_buttons_values(self):
+        self.speed = self.buttons_edition_mode[0].value
+        self.speed_sprint = self.buttons_edition_mode[1].value
+
 
 
 

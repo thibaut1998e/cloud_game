@@ -1,4 +1,3 @@
-
 from pygame import locals as const
 from character import *
 from arrival import *
@@ -8,44 +7,47 @@ from game import *
 from constantes import *
 from Coin import *
 import pickle
+from DangerousMonster import *
+from functools import partial
 
 
 class LevelDesigner(Game):
+    """class to design levels"""
     def __init__(self, window_height, window_width, image_path=None, wall_color=black):
         super().__init__(window_height, window_width, image_path, wall_color)
-        self.controles = {VER_WALL: const.K_w,
-                          HOR_WALL:const.K_x,
-                          DELETE:const.K_d,
-                          ADD_BUTTON_WALL:const.K_b,
-                          COIN:const.K_c}
+        # objets which pop on the screen when pressing the corresponding keys (ex : K_b = B key)
+        self.controles = {const.K_c: Coin,
+                          const.K_m: DangerousMonster,
+                          const.K_w: partial(Wall, height=200, width=10),
+                          const.K_x: partial(Wall, height=10, width=200)}
 
     def process_event(self, event):
-        super(LevelDesigner, self).process_event(event)
+        super(LevelDesigner, self).process_event(event) # it is still possible to use the controls of playing mode
         for i,o in enumerate(self.objects):
-            o.process_event_edition_mode(event)
+            o.process_event_edition_mode(event) # individual event process of each object
 
+        # add new objects when pressing on certain keys
         if event.type == pg.KEYDOWN:
-            if event.key == self.controles[VER_WALL]:
-                new_wall = Wall(self, [self.width//2, self.height//2], 200, 10)
-                self.add_object(new_wall)
-            if event.key == self.controles[HOR_WALL]:
-                new_wall = Wall(self, [self.width // 2, self.height // 2], 10, 200)
-                self.add_object(new_wall)
-            if event.key == self.controles[COIN]:
-                new_coin = Coin(self, [self.width//2, self.height//2])
-                self.add_object(new_coin)
+            if event.key in self.controles.keys():
+                new_object = self.controles[event.key](self, pos=[self.width//2, self.height//2])
+                self.add_object(new_object)
 
     def save(self, save_location):
+        """write the game in a text file"""
         f = open(save_location, 'w')
+        # we start by writing some of the game attributes (height and width)
         write_object_in_file(self, f)
+        # we then write the attributes of all the objects. (only attributes specified
+        # in their method attribute_to_save)
         for o in self.objects:
+            # If the class name is not in the keys of dict_class_name, the object is not saved, otherwise the method
+            # create_game_with_file in main.py wont be able to reconstruct the object
             if o.__class__.__name__ in dict_class_name.keys():
                 write_object_in_file(o, f)
         print(f'game saved at location {save_location}')
 
 
 def write_object_in_file(o, f):
-    #print(type(o).__str__)
     print(f'{o.__class__.__name__}', file=f)
     for at in o.attributes_to_save():
         try:
@@ -56,11 +58,12 @@ def write_object_in_file(o, f):
     print('', file=f)
 
 
-dict_class_name = {'Character':Character,
-                   'Wall':Wall,
-                   'Arrival':Arrival,
+dict_class_name = {'Character': Character,
+                   'Wall': Wall,
+                   'Arrival': Arrival,
                    'LevelDesigner': LevelDesigner,
-                   'Coin':Coin}
+                   'Coin': Coin,
+                   'DangerousMonster': DangerousMonster}
 
 
 if __name__ == '__main__':

@@ -18,7 +18,7 @@ class Monster(Game_object):
 
     def interact(self):
         message = ''
-        if self.collide_with_me(self.game.get_character()):
+        if self.game.has_started and self.collide_with_me(self.game.get_character()):
             self.game.continuer = False
             return messages[0]
         return message

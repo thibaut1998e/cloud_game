@@ -17,7 +17,7 @@ class Wall(Monster):
         self.ampli_Y = ampli_y
         #self.color = color
         self.display_button_edition_mode = False
-        self.buttons_edition_mode = []
+        #self.buttons_edition_mode = []
 
     def attributes_to_save(self):
         att_to_save = super(Wall, self).attributes_to_save()
@@ -44,34 +44,37 @@ class Wall(Monster):
                 (x_min_char < x_min < x_max < x_max_char) and (y_min<y_min_char<y_max) or \
                (y_min_char < y_min < y_max < y_max_char) and (x_min<x_min_char<x_max)
 
-    def process_event_edition_mode(self, event):
-        super(Wall, self).process_event_edition_mode(event)
-        if event.type == const.KEYDOWN and self.selected_right and event.key==self.game.controles[ADD_BUTTON_WALL]:
-            if not self.display_button_edition_mode:
-                pos1 = [self.initial_pos[0] - 30, self.initial_pos[1]]
-                pos2 = [self.initial_pos[0] - 30, self.initial_pos[1] +50]
-                pos3 = [self.initial_pos[0] + self.width + 50, self.initial_pos[1]]
-                pos4 = [self.initial_pos[0] + self.width + 50, self.initial_pos[1] + 50]
-                hor_period_button = Button(self.game, pos1,0, 0,
-                                               f'hor period : ', self.period_X, value_min=0.5, value_max=30, step=0.5)
-                hor_ampl_button = Button(self.game, pos2, 0, 0, f'hor ampli : ', self.ampli_X,
-                                             value_min=-300, value_max=300, step=5)
-                ver_period_button = Button(self.game, pos3, 0, 0, f'ver period : ', self.period_Y,
-                                               value_min=0.5, value_max=30, step=0.5)
-                ver_ampl_button = Button(self.game, pos4, 0, 0, f'ver ampli : ', self.ampli_Y,
-                                             value_min=-300, value_max=300, step=5)
-                buttons = [hor_period_button, hor_ampl_button, ver_period_button, ver_ampl_button]
-                self.game.add_object(*buttons)
-                self.buttons_edition_mode = buttons
-                self.display_button_edition_mode = True
-            else:
-                self.period_X = self.buttons_edition_mode[0].value
-                self.ampli_X = self.buttons_edition_mode[1].value
-                self.period_Y = self.buttons_edition_mode[2].value
-                self.ampli_Y = self.buttons_edition_mode[3].value
-                for b in self.buttons_edition_mode:
-                    self.game.suppress_object(b)
-                    self.display_button_edition_mode = False
+    def create_buttons(self):
+        pos1 = [self.initial_pos[0] - 90, self.initial_pos[1]]
+        pos2 = [self.initial_pos[0] - 90, self.initial_pos[1] + 70]
+        pos3 = [self.initial_pos[0] + 20, self.initial_pos[1]]
+        pos4 = [self.initial_pos[0] + 20, self.initial_pos[1] + 70]
+
+        hor_period_button = Button(self.game, pos1, 0, 0,
+                                   f'hor period : ', self.period_X, value_min=0.5, value_max=30, step=0.5)
+        hor_ampl_button = Button(self.game, pos2, 0, 0, f'hor ampli : ', self.ampli_X,
+                                 value_min=-300, value_max=300, step=5)
+        ver_period_button = Button(self.game, pos3, 0, 0, f'ver period : ', self.period_Y,
+                                   value_min=0.5, value_max=30, step=0.5)
+        ver_ampl_button = Button(self.game, pos4, 0, 0, f'ver ampli : ', self.ampli_Y,
+                                 value_min=-300, value_max=300, step=5)
+        buttons = [hor_period_button, hor_ampl_button, ver_period_button, ver_ampl_button]
+        return buttons
+
+    def save_buttons_values(self):
+        self.period_X = self.buttons_edition_mode[0].value
+        self.ampli_X = self.buttons_edition_mode[1].value
+        self.period_Y = self.buttons_edition_mode[2].value
+        self.ampli_Y = self.buttons_edition_mode[3].value
+
+def f(x, a, b):
+    #returns x if x in [a, b], a if x < a and b if x > b
+    if x < a:
+        return a
+    if x > b:
+        return b
+    return x
+
 
 
 

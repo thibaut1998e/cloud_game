@@ -75,10 +75,9 @@ def convert(at_val):
     return at_val
 
 
-def create_level_from_scratch(window_height, window_width, save_location, speed=hor_speed, speed_sprint=hor_speed_sprint
-                              , im_path=None, wall_color=black):
+def create_level_from_scratch(window_height, window_width, save_location, im_path=None, wall_color=black):
     level_designr = LevelDesigner(window_height, window_width, im_path, wall_color)
-    char = Character(level_designr, speed=speed, speed_sprint=speed_sprint)
+    char = Character(level_designr)
     arrival = Arrival(level_designr)
     level_designr.add_object(char, arrival)
     main(level_designr, save_location)

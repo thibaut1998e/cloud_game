@@ -3,7 +3,7 @@ height	500
 width	1000
 
 Character
-initial_pos	[443.0, 232.0]
+initial_pos	[435.0, 238.0]
 height	40.0
 width	40.0
 speed	0.1
@@ -105,11 +105,11 @@ ampli_X	70.0
 ampli_Y	0.0
 
 Wall
-initial_pos	[542, 18]
-height	200
-width	10
-period_X	2
-period_Y	2
-ampli_X	0
-ampli_Y	-300
+initial_pos	[546.0, 25.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	-205.0
 
