@@ -17,6 +17,7 @@ If you want to edit an existing level :
 python cloud_game.py --location path_of_level --edition
 
 Overrview of the code 
+
 2) how to code a new Object
 
 There is a general class for all the object of the game : Game_object, any object of the game must extends this class. 
@@ -30,22 +31,22 @@ transparency color, it is set to the color of the top left corner
 the list objects it contains. Then our object is able to fully interact with all other objects.
 
 To add a new object, it must extends this class. You also need to override some methods :
-a) interact, this method is called each time before updating the screen. You can do anything in it to make your object interact with 
+- interact, this method is called each time before updating the screen. You can do anything in it to make your object interact with 
 the game, such as moving or ending the game by setting the attribute 'continuer' of game to False. It returns a message which is displayed
 at the screen if the game ends. 
-b) display : this method is called at each iteration of the game loop before updating the screen, it displays the object on the screen.
+- display : this method is called at each iteration of the game loop before updating the screen, it displays the object on the screen.
 You might not need to overide it since it covers most of the cases in the parent class (with and without image).
-c) reset : called each time a new game start, you might want to reset some attributes
-d) process_event : it processes the event of the keyboard, you might want to modify the value of some attributes according to what
+- reset : called each time a new game start, you might want to reset some attributes
+- process_event : it processes the event of the keyboard, you might want to modify the value of some attributes according to what
 has been pressed on the keyboard. You might not need to override it since its mainly the charcater which need to interact with the keyboard.
-e) process_event_edition_mode : it processes the event in the edition mode. Here again you might not need to override, since most of the
+- process_event_edition_mode : it processes the event in the edition mode. Here again you might not need to override, since most of the
 events are processed in the parent class. (such as changing the size, selcting, add buttons etc)
-f) create_buttons : Buttons only exist in the edition mode. They are used to change the values of some attributes (such
+- create_buttons : Buttons only exist in the edition mode. They are used to change the values of some attributes (such
 as the speed of the character or  period of the walls). This method is called when the key b is pressed on a selected object in the edition
 mode. You can set in this method the value max, min and step of your buttons. If you do not override, no button will appear when pressing b
-g) save_buttons_values : this method is called when the buttons are removed from the game. You can save here the values recorded by the 
+- save_buttons_values : this method is called when the buttons are removed from the game. You can save here the values recorded by the 
 buttons in some attributes of your object.
-h) attributes_to_save : return the list of attributes to save in the text file when the window is closed. In the parent class this list is
+- attributes_to_save : return the list of attributes to save in the text file when the window is closed. In the parent class this list is
 initial_pos, height and width. This attributes must be string, float, list or tuple.
 Note : For all of these methods, do not forget to also call the method of the parent class with super unless its not needed
 
