@@ -31,11 +31,11 @@ transparency color, it is set to the color of the top left corner
 the list objects it contains. Then our object is able to fully interact with all other objects.
 
 To add a new object, it must extends this class. You also need to override some methods :
-- interact, this method is called each time before updating the screen. You can do anything in it to make your object interact with 
-the game, such as moving or ending the game by setting the attribute 'continuer' of game to False. It returns a message which is displayed
-at the screen if the game ends. 
 - display : this method is called at each iteration of the game loop before updating the screen, it displays the object on the screen.
 You might not need to overide it since it covers most of the cases in the parent class (with and without image).
+- interact, this method is called each time in the game loop before updating the screen. You can do anything in it to make your object interact with 
+the game, such as moving or ending the game by setting the attribute 'continuer' of game to False. It returns a message which is displayed
+at the screen if the game ends. 
 - reset : called each time a new game start, you might want to reset some attributes
 - process_event : it processes the event of the keyboard, you might want to modify the value of some attributes according to what
 has been pressed on the keyboard. You might not need to override it since its mainly the charcater which need to interact with the keyboard.
@@ -43,15 +43,16 @@ has been pressed on the keyboard. You might not need to override it since its ma
 events are processed in the parent class. (such as changing the size, selcting, add buttons etc)
 - create_buttons : Buttons only exist in the edition mode. They are used to change the values of some attributes (such
 as the speed of the character or  period of the walls). This method is called when the key b is pressed on a selected object in the edition
-mode. You can set in this method the value max, min and step of your buttons. If you do not override, no button will appear when pressing b
+mode.  Buttons associated with this object are created here, you can set in the constructor the value max, min and step of your buttons. If you do not override, no button will appear when pressing b
 - save_buttons_values : this method is called when the buttons are removed from the game. You can save here the values recorded by the 
 buttons in some attributes of your object.
 - attributes_to_save : return the list of attributes to save in the text file when the window is closed. In the parent class this list is
 initial_pos, height and width. This attributes must be string, float, list or tuple.
+
 Note : For all of these methods, do not forget to also call the method of the parent class with super unless its not needed
 
-There is a class Monster which extends Game_object. This class has a method which ends the game when the character collides with it. 
-If you want to create an objets which kill the character, it must extends this class so that you d not need to rewrite this method. For
+Note 2 : There is a class Monster which extends Game_object. This class has a method which ends the game when the character collides with it. 
+If you want to create an objets which kill the character, it must extends this class so that you do not need to rewrite this method. For
 example wall and DangerousMonster extend this class
 
 3) Add your object in the edition mode :
