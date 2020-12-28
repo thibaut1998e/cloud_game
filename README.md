@@ -5,18 +5,21 @@ they will be saved in a text file.
 
 1) Launch the code:
 To launch a level type in a terminal (assuming you are in the right folder)
+
 python cloud_game.py --location path_of_level
+
 If the corresponding path exists it will open the level and you will be able to play. 
 Otherwise it will open the edition mode with an empty level. When you have finished editing you can close the window 
 and your level will be saved at the specified location. Please refer to the playing and edition mode instructions to know how to
 edit a level and to control the character.
 If you want to edit an existing level :
+
 python cloud_game.py --location path_of_level --edition
 
 Overrview of the code 
 2) how to code a new Object
 
-There is a general class for all the object of the game : Game_object, all the other objects of the game must extends this class. 
+There is a general class for all the object of the game : Game_object, any object of the game must extends this class. 
 An object of this class is a rectangle, its main attributes are :
 - height and width
 - pos : its postion (the top left corner)
