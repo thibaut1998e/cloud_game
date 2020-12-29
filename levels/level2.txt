@@ -7,7 +7,7 @@ initial_pos	[0.0, 80.0]
 height	40.0
 width	40.0
 speed	0.1
-speed_sprint	0.4000000000000002
+speed_sprint	0.3000000000000001
 
 Arrival
 initial_pos	[902.0, 83.0]

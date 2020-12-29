@@ -1,0 +1,64 @@
+LevelDesigner
+height	500
+width	1000
+
+Character
+initial_pos	[53, 59]
+height	40.0
+width	40.0
+speed	0.15000000000000002
+speed_sprint	0.3000000000000001
+
+Arrival
+initial_pos	[900.0, 250.0]
+height	40.0
+width	40.0
+
+Wall
+initial_pos	[246, 2]
+height	330
+width	70
+period_X	2
+period_Y	2
+ampli_X	0
+ampli_Y	0
+
+Wall
+initial_pos	[18, 202]
+height	130
+width	550
+period_X	6.0
+period_Y	2
+ampli_X	85
+ampli_Y	0
+
+DangerousMonster
+initial_pos	[570, 109]
+height	40
+width	40
+speed	1
+
+Wall
+initial_pos	[585, 212]
+height	290
+width	120
+period_X	2
+period_Y	2
+ampli_X	0
+ampli_Y	0
+
+Coin
+initial_pos	[278, 448]
+height	25
+width	25
+
+Coin
+initial_pos	[278, 448]
+height	25
+width	25
+
+Coin
+initial_pos	[846, 436]
+height	25
+width	25
+

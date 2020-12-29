@@ -3,29 +3,47 @@ height	500
 width	1000
 
 Character
-initial_pos	[182.0, 159.0]
+initial_pos	[55.0, 335.0]
 height	40.0
 width	40.0
 speed	0.2
-speed_sprint	0.5
+speed_sprint	0.34999999999999987
 
 Arrival
-initial_pos	[363.0, 364.0]
+initial_pos	[925.0, 338.0]
 height	40.0
 width	40.0
 
 Wall
-initial_pos	[0.0, 291.0]
-height	10.0
-width	930.0
+initial_pos	[179.0, 190.0]
+height	310.0
+width	125.0
 period_X	2.0
 period_Y	2.0
 ampli_X	0.0
 ampli_Y	0.0
 
-Coin
-initial_pos	[819.0, 82.0]
-height	25.0
-width	25.0
-pos	[819.0, 82.0]
+Wall
+initial_pos	[454.0, 1.0]
+height	310.0
+width	120.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[723.0, 222.0]
+height	290.0
+width	110.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
+DangerousMonster
+initial_pos	[500.0, 401.0]
+height	40.0
+width	45.0
+speed	1.9999999999999991
 

@@ -3,11 +3,13 @@ height	500
 width	1000
 
 Character
-initial_pos	[435.0, 238.0]
-height	40.0
-width	40.0
+initial_pos	[134, 136]
+height	30.0
+width	30.0
 speed	0.1
 speed_sprint	0.2
+v0_min	0.3
+v0_max	0.6
 
 Arrival
 initial_pos	[922.0, 42.0]
@@ -51,47 +53,47 @@ ampli_X	0.0
 ampli_Y	-45.0
 
 Wall
-initial_pos	[543.0, 285.0]
+initial_pos	[546.0, 298.0]
 height	200.0
 width	10.0
 period_X	2.0
-period_Y	2.0
+period_Y	2.099999999999999
 ampli_X	0.0
 ampli_Y	300.0
 
 Wall
-initial_pos	[543.0, 285.0]
+initial_pos	[546.0, 298.0]
 height	200.0
 width	10.0
 period_X	2.0
-period_Y	2.0
+period_Y	2.099999999999999
 ampli_X	0.0
 ampli_Y	300.0
 
 Wall
-initial_pos	[543.0, 285.0]
+initial_pos	[546.0, 298.0]
 height	200.0
 width	10.0
 period_X	2.0
-period_Y	2.0
+period_Y	2.099999999999999
 ampli_X	0.0
 ampli_Y	300.0
 
 Wall
-initial_pos	[543.0, 285.0]
+initial_pos	[546.0, 298.0]
 height	200.0
 width	10.0
 period_X	2.0
-period_Y	2.0
+period_Y	2.099999999999999
 ampli_X	0.0
 ampli_Y	300.0
 
 Wall
-initial_pos	[543.0, 285.0]
+initial_pos	[546.0, 298.0]
 height	200.0
 width	10.0
 period_X	2.0
-period_Y	2.0
+period_Y	2.099999999999999
 ampli_X	0.0
 ampli_Y	300.0
 
@@ -109,7 +111,76 @@ initial_pos	[546.0, 25.0]
 height	200.0
 width	10.0
 period_X	2.0
-period_Y	2.0
+period_Y	2.1000000000000005
 ampli_X	0.0
 ampli_Y	-205.0
+
+Wall
+initial_pos	[440.0, 91.0]
+height	10.0
+width	200.0
+period_X	2.0
+period_Y	2.0
+ampli_X	100.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[436.0, 102.0]
+height	230.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[436.0, 336.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[341.0, 2.0]
+height	200.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[340.0, 201.0]
+height	185.0
+width	10.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
+Wall
+initial_pos	[352.0, 331.0]
+height	10.0
+width	135.0
+period_X	2.0
+period_Y	2.0
+ampli_X	-90.0
+ampli_Y	0.0
+
+Coin
+initial_pos	[134, 136]
+height	25
+width	25
+
+Coin
+initial_pos	[598, 25]
+height	25
+width	25
+
+Coin
+initial_pos	[484, 425]
+height	25
+width	25
 
