@@ -17,11 +17,11 @@ hor_speed_sprint = 0.2
 losing_messages = ['you collided with a wall or a monster : GAME OVER', 'you went outside the screen : GAME OVER']
 winning_messages = ['Congratulation you won']
 
-path_character_image = 'images/nuage.png'
+path_character_image = 'images/nuage.PNG'
 path_arrival_image = 'images/arrival.PNG'
-coin_image = 'images/coin.png'
-monster_image = 'images/diable.png'
-default_backgroud_image = 'images/cloud_background.png'
+coin_image = 'images/coin.PNG'
+monster_image = 'images/diable.PNG'
+default_backgroud_image = 'images/cloud_background.PNG'
 
 green = (0, 255, 0)
 yellow = (255,255,0)
