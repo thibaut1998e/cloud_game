@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86bb606b-63b1-4847-a065-1622849965c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Monster.py" beforeDir="false" afterPath="$PROJECT_DIR$/Monster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/diable.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/images/diable.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/nuage.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/images/nuage.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wall.py" beforeDir="false" afterPath="$PROJECT_DIR$/wall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DangerousMonster.py" beforeDir="false" afterPath="$PROJECT_DIR$/DangerousMonster.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

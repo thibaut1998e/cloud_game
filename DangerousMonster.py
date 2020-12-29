@@ -5,6 +5,7 @@ from Button import *
 
 
 class DangerousMonster(Monster):
+    """a class of monster which follows the character wherever it is"""
     def __init__(self, game, pos=(0,0), height=40, width=40, im_path=monster_image, transparent_color=white, speed=1):
         super().__init__(game, pos, height, width, im_path, transparent_color)
         self.speed = speed
@@ -25,6 +26,7 @@ class DangerousMonster(Monster):
         return att_to_save
 
     def create_buttons(self):
+        """one button to save the speed"""
         pos = [self.pos[0] + self.width + 10, self.pos[1] + self.height + 10]
         b = Button(self.game, pos, 0, 0,
                f'speed : ', self.speed, value_min=0.5, value_max=3, step=0.1)
