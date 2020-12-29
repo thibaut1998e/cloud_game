@@ -2,7 +2,6 @@ from time import time
 import pygame as pg
 import numpy as np
 from game_object import Game_object
-from rectangle import *
 from Button import *
 from Monster import *
 
