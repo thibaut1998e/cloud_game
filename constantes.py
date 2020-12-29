@@ -14,8 +14,8 @@ G = 1
 hor_speed = 0.1
 hor_speed_sprint = 0.2
 
-messages = ['you collided with a wall or a monster : GAME OVER', 'you went outside the screen : GAME OVER',
-            'Congratulation you won']
+losing_messages = ['you collided with a wall or a monster : GAME OVER', 'you went outside the screen : GAME OVER']
+winning_messages = ['Congratulation you won']
 
 path_character_image = 'images/nuage.png'
 path_arrival_image = 'images/arrival.PNG'

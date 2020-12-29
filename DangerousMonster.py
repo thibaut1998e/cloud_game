@@ -17,7 +17,8 @@ class DangerousMonster(Monster):
             char_pos = np.array([x_char, y_char])
             pos = np.array(self.pos)
             direction = char_pos - pos
-            self.pos = pos + 10**-3*self.speed * direction
+
+            self.pos = pos + 0.1*self.speed * direction/np.linalg.norm(direction)
         return message
 
     def attributes_to_save(self):
@@ -29,7 +30,7 @@ class DangerousMonster(Monster):
         """one button to save the speed"""
         pos = [self.pos[0] + self.width + 10, self.pos[1] + self.height + 10]
         b = Button(self.game, pos, 0, 0,
-               f'speed : ', self.speed, value_min=0.5, value_max=3, step=0.1)
+               f'speed : ', self.speed, value_min=0.5, value_max=6, step=0.1)
         return [b]
 
     def save_buttons_values(self):

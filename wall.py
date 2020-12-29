@@ -38,11 +38,11 @@ class Wall(Monster):
         pos4 = [self.initial_pos[0] + 20, self.initial_pos[1] + 70]
 
         hor_period_button = Button(self.game, pos1, 0, 0,
-                                   f'hor period : ', self.period_X, value_min=0.5, value_max=30, step=0.5)
+                                   f'hor period : ', self.period_X, value_min=0.5, value_max=30, step=0.1)
         hor_ampl_button = Button(self.game, pos2, 0, 0, f'hor ampli : ', self.ampli_X,
                                  value_min=-300, value_max=300, step=5)
         ver_period_button = Button(self.game, pos3, 0, 0, f'ver period : ', self.period_Y,
-                                   value_min=0.5, value_max=30, step=0.5)
+                                   value_min=0.5, value_max=30, step=0.1)
         ver_ampl_button = Button(self.game, pos4, 0, 0, f'ver ampli : ', self.ampli_Y,
                                  value_min=-300, value_max=300, step=5)
         buttons = [hor_period_button, hor_ampl_button, ver_period_button, ver_ampl_button]

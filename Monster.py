@@ -21,5 +21,5 @@ class Monster(Game_object):
         message = ''
         if self.game.has_started and self.collide_with_me(self.game.get_character()):
             self.game.continuer = False
-            return messages[0]
+            return losing_messages[0]
         return message

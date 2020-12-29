@@ -14,6 +14,7 @@ def main(game, save_location):
     # text, textRect = get_text('press space to continue')
     message = 'press space to continue'
     continuer = True
+    nb_tries = 0
     while continuer:
         for event in pygame.event.get():
             if event.type == const.QUIT or (event.type == const.KEYDOWN and event.key == const.K_ESCAPE):
@@ -21,7 +22,10 @@ def main(game, save_location):
                 continuer = False
             if event.type == const.KEYDOWN and event.key == const.K_SPACE:
                 message = game.start()
+                nb_tries += 1
 
+        if message in winning_messages:
+            message = f'{message}, number of tries : {nb_tries}'
         display_text(game.screen, message, location=(game.width // 2, game.height//2))
         pygame.display.flip()
     if save_location is not None:

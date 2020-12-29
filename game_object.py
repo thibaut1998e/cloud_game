@@ -7,6 +7,15 @@ import copy as cp
 class Game_object:
     """general class of objects. All objects of the game must extend this class. It represents rectangle """
     def __init__(self, game, pos=(0,0), height=40, width=40, im_path=None, transparent_color=black):
+        pos = [pos[0], pos[1]]
+        if pos[0] <= 0:
+            pos[0] = 0
+        if pos[0] >= game.width - 30:
+            pos[0] = game.width - 30
+        if pos[1] <= 0:
+            pos[1] = 0
+        if pos[1] >= game.height - 30:
+            pos[1] = game.height - 30
         self.pos = [pos[0], pos[1]] # current position
         self.initial_pos = [pos[0], pos[1]] # initial position (used to reset position for moving objects)
         # self.initial_pos = self.pos

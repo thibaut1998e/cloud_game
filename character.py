@@ -53,6 +53,8 @@ class Character(Game_object):
         att_to_save = super(Character, self).attributes_to_save()
         att_to_save.append('speed')
         att_to_save.append('speed_sprint')
+        att_to_save.append('v0_min')
+        att_to_save.append('v0_max')
         return att_to_save
 
     def move(self):
@@ -122,23 +124,27 @@ class Character(Game_object):
             # if the character goes outside the screen, we set game.continuer to False so that the game ends
             # other ending condtions, such as wall collision are handle in other Classes
             self.game.continuer = False
-            return messages[1]
+            return losing_messages[1]
         return ''
 
     def create_buttons(self):
-        """in edition mode, we create 2 buttons when b is pressed on a selected character, one to adjust the  horizontal
-        speed and the other to adjust the horizontal speed when sprinting"""
+        """in edition mode, we create 3 buttons when b is pressed on a selected character, one to adjust the  horizontal
+        speed  another to adjust the horizontal speed when sprinting, the last one is used for the height of the jump"""
         pos1 = [self.pos[0] + self.width + 10, self.pos[1] + self.height//2]
         pos2 = [self.pos[0]+self.width//2, self.pos[1]+self.height+10]
+        pos3 = [self.pos[0], self.pos[1] + self.height]
         b1 = Button(self.game, pos1, 0, 0,
                     'speed : ', self.speed, value_min=0.05, value_max=0.2, step=0.01)
         b2 = Button(self.game, pos2, 0, 0,
                     'speed sprint: ', self.speed_sprint, value_min=0.1, value_max=0.5, step=0.01)
-        return [b1, b2]
+        b3 = Button(self.game, pos3, 0, 0, 'jump height', round(self.v0_max/v0_max,2), value_min=0.5, value_max=1.5, step=0.1)
+        return [b1, b2, b3]
 
     def save_buttons_values(self):
         self.speed = self.buttons_edition_mode[0].value
         self.speed_sprint = self.buttons_edition_mode[1].value
+        self.v0_max = v0_max*self.buttons_edition_mode[2].value
+        self.v0_min = v0_min*self.buttons_edition_mode[2].value
 
 
 

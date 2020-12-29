@@ -16,5 +16,5 @@ class Arrival(Game_object):
     def interact(self):
         if self.test_end_game(self.game.get_character()):
             self.game.continuer = False
-            return messages[2]
+            return winning_messages[0]
         return ''
