@@ -2,6 +2,7 @@ from game_object import *
 
 
 class Monster(Game_object):
+    """general class for objects which ends the game when the charcater collide with them"""
     def __init__(self, game, pos=(0,0), height=40, width=40, im_path=None, transparent_color=black):
         super().__init__(game, pos, height, width, im_path, transparent_color)
 

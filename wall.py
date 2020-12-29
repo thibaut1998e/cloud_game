@@ -8,16 +8,14 @@ from Monster import *
 
 
 class Wall(Monster):
+    """wall are Monster which move horizontally and vertically following a sinusoidal function"""
     def __init__(self, game, pos=(0,0), height=200, width=10, period_x=2, period_y=2, ampli_x=0, ampli_y=0):
         super().__init__(game, pos, height, width)
-        #self.mobile_position = pos
         self.period_X = period_x
         self.period_Y = period_y
         self.ampli_X = ampli_x
         self.ampli_Y = ampli_y
-        #self.color = color
         self.display_button_edition_mode = False
-        #self.buttons_edition_mode = []
 
     def attributes_to_save(self):
         att_to_save = super(Wall, self).attributes_to_save()
@@ -33,18 +31,8 @@ class Wall(Monster):
         message = super(Wall, self).interact()
         return message
 
-    def collide_with_me(self, character):
-        """return true iff characcter colide with the wall self"""
-        x_min, x_max, y_min, y_max = self.get_limits()
-        x_min_char, x_max_char, y_min_char, y_max_char = character.get_limits()
-        return (x_min < x_min_char < x_max and y_min < y_min_char < y_max) or \
-               (x_min < x_min_char < x_max and y_min < y_max_char < y_max) or \
-               (x_min < x_max_char < x_max and y_min < y_min_char < y_max) or \
-               (x_min < x_max_char < x_max and y_min < y_max_char < y_max) or \
-                (x_min_char < x_min < x_max < x_max_char) and (y_min<y_min_char<y_max) or \
-               (y_min_char < y_min < y_max < y_max_char) and (x_min<x_min_char<x_max)
-
     def create_buttons(self):
+        """we create 4 buttons for horizontal and vertical period and amplitude"""
         pos1 = [self.initial_pos[0] - 90, self.initial_pos[1]]
         pos2 = [self.initial_pos[0] - 90, self.initial_pos[1] + 70]
         pos3 = [self.initial_pos[0] + 20, self.initial_pos[1]]
@@ -67,13 +55,7 @@ class Wall(Monster):
         self.period_Y = self.buttons_edition_mode[2].value
         self.ampli_Y = self.buttons_edition_mode[3].value
 
-def f(x, a, b):
-    #returns x if x in [a, b], a if x < a and b if x > b
-    if x < a:
-        return a
-    if x > b:
-        return b
-    return x
+
 
 
 

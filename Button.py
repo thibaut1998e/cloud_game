@@ -5,6 +5,8 @@ from utils import *
 
 
 class Button(Game_object):
+    """button are Object which display text and an settable value, note that height and width in
+    the constructor are not used here, they are set automatically with the parameter size of the method display_text"""
     def __init__(self, game, pos, height, width, text, value, value_min, value_max, step):
         super().__init__(game, pos, height, width)
         self.text = text
@@ -22,6 +24,7 @@ class Button(Game_object):
         display_text(self.game.screen, text, size=12, location=(self.pos[0]+self.width//2, self.pos[1]+self.height//2))
 
     def process_event_edition_mode(self, event):
+        """when pressing + or - on a selected button we can adjust its value"""
         super(Button, self).process_event_edition_mode(event)
         if self.selected_right and event.type == const.KEYDOWN:
             if event.unicode == '+':
