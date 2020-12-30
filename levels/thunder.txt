@@ -1,0 +1,48 @@
+LevelDesigner
+height	500
+width	1000
+
+Character
+initial_pos	[929.0, 131.0]
+height	40.0
+width	40.0
+speed	0.2
+speed_sprint	0.2
+v0_min	0.38999999999999996
+v0_max	0.7799999999999999
+
+Arrival
+initial_pos	[923, 296]
+height	40.0
+width	40.0
+
+ThunderCloud
+initial_pos	[588, 9]
+height	80.0
+width	200.0
+period	2.0
+lightning_speed	0.5
+
+ThunderCloud
+initial_pos	[366, 3]
+height	80.0
+width	200.0
+period	2.0
+lightning_speed	0.5
+
+ThunderCloud
+initial_pos	[149.0, 3.0]
+height	80.0
+width	200.0
+period	2.0
+lightning_speed	0.5
+
+Wall
+initial_pos	[179, 249]
+height	35.0
+width	820.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	0.0
+
