@@ -9,6 +9,7 @@ from Coin import *
 import pickle
 from DangerousMonster import *
 from functools import partial
+from ThunerCloud import *
 
 
 class LevelDesigner(Game):
@@ -19,7 +20,8 @@ class LevelDesigner(Game):
         self.controles = {const.K_c: Coin,
                           const.K_m: DangerousMonster,
                           const.K_w: partial(Wall, height=200, width=10),
-                          const.K_x: partial(Wall, height=10, width=200)}
+                          const.K_x: partial(Wall, height=10, width=200),
+                          const.K_t: ThunderCloud}
 
     def process_event(self, event):
         super(LevelDesigner, self).process_event(event) # it is still possible to use the controls of playing mode
@@ -63,7 +65,8 @@ dict_class_name = {'Character': Character,
                    'Arrival': Arrival,
                    'LevelDesigner': LevelDesigner,
                    'Coin': Coin,
-                   'DangerousMonster': DangerousMonster}
+                   'DangerousMonster': DangerousMonster,
+                   'ThunderCloud': ThunderCloud}
 
 
 if __name__ == '__main__':

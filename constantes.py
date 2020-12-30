@@ -22,6 +22,8 @@ path_arrival_image = 'images/arrival.PNG'
 coin_image = 'images/coin.PNG'
 monster_image = 'images/diable.PNG'
 default_backgroud_image = 'images/cloud_background.PNG'
+nasty_cloud_image = 'images/thunder_cloud.png'
+lightning_image = 'images/lightning.png'
 
 green = (0, 255, 0)
 yellow = (255,255,0)
