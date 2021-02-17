@@ -6,7 +6,6 @@ from utils import *
 from game import *
 from constantes import *
 from Coin import *
-import pickle
 from DangerousMonster import *
 from functools import partial
 from ThunerCloud import *
