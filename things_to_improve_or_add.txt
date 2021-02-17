@@ -1,0 +1,23 @@
+Introduction
+-taille base, données
+- catrtographier des caractéristiques des profils (ex minimum
+- qu'est ce qu'un profil de célérité 
+- profil type dans l'introduction
+- réseau argo
+- sert pour la lutte antisoumarine, connaitre et avoir des indications sur les portées des 
+sonar et problème de zone d'Ombre
+- caractérisezr la capacité du milieu à propager le son
+
+minimum profond céérité, 
+profondeur du chenal acoustique de surface = profondeur du premier maximum
+
+limiter le risuqe de non détection sonar
+
+description code dans le rapport
+documentation du code : sphynx
+
+décrire les méthodes et présenter les défauts de celles qu'on a pas retenue
+
+biblio dans les références
+
+filtrage à partir de la surface ou du fond ?
