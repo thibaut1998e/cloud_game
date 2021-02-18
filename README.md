@@ -16,7 +16,7 @@ If you want to edit an existing level :
 
 python cloud_game.py --location path_of_level --edition
 
-If you have ideas of things that could be improved or added, you can note them in the file things_to_improve_or_add.txt
+
 
 Overrview of the code 
 
