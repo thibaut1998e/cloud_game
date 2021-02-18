@@ -1,2 +1,3 @@
 - ajouter une option pour sauvegarder le niveau lorsqu'on ferme le mode édition (ne pas sauvegarder automatiquement)
 - texture des murs
+- position par défaut des boutons (par rapport à l'objet)
