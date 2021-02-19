@@ -1,0 +1,45 @@
+LevelDesigner
+height	500
+width	1000
+
+Character
+initial_pos	[94, 139]
+height	40.0
+width	40.0
+speed	0.1
+speed_sprint	0.2
+v0_min	0.3
+v0_max	0.6
+
+Arrival
+initial_pos	[900.0, 250.0]
+height	40.0
+width	40.0
+
+Wall
+initial_pos	[668.0, 192.0]
+height	150.0
+width	50.0
+period_X	2.0
+period_Y	2.0
+ampli_X	0.0
+ampli_Y	85.0
+
+Coin
+initial_pos	[401, 173]
+height	25.0
+width	25.0
+
+DangerousMonster
+initial_pos	[290.0, 214.0]
+height	40.0
+width	40.0
+speed	1.0
+
+ThunderCloud
+initial_pos	[345.0, 39.0]
+height	80.0
+width	200.0
+period	2.0
+lightning_speed	0.5
+
